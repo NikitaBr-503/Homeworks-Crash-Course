@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7321de45-0a10-4730-83a8-47fa407d4a4f" name="Default Changelist" comment="" />
+    <list default="true" id="7321de45-0a10-4730-83a8-47fa407d4a4f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/chromedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Groups" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Suite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test_1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test_1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test_2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test_2.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +26,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -24,6 +38,7 @@
   </component>
   <component name="ProjectId" id="1Sh2mORTiL7As5yyd4jH2Q0vosj" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -42,12 +57,51 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.test_2">
-    <configuration name="Trying" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.Groups">
+    <configuration name="E:/IDEA/hometask_Lecture_6/src/test/Suite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="hometask_Lecture_6" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/Suite.xml" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Trying" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Groups" type="TestNG">
+      <module name="hometask_Lecture_6" />
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="TestOne" />
+      <option name="TEST_OBJECT" value="GROUP" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
@@ -56,9 +110,15 @@
     </configuration>
     <configuration name="test_1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="hometask_Lecture_6" />
+      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="test_1" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
@@ -88,11 +148,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="TestNG.Groups" />
+      <item itemvalue="TestNG.test_1.TestOne" />
+      <item itemvalue="TestNG.test_2" />
+      <item itemvalue="TestNG.test_1" />
+      <item itemvalue="TestNG.E:/IDEA/hometask_Lecture_6/src/test/Suite.xml" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.test_2" />
+        <item itemvalue="TestNG.E:/IDEA/hometask_Lecture_6/src/test/Suite.xml" />
         <item itemvalue="TestNG.test_1" />
-        <item itemvalue="TestNG.Trying" />
+        <item itemvalue="TestNG.test_2" />
         <item itemvalue="TestNG.test_1.TestOne" />
       </list>
     </recent_temporary>
@@ -109,5 +176,16 @@
       <updated>1572001664698</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

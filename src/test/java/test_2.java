@@ -6,14 +6,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class test_2 {
-    @Test
-    public void TestTwo(){
+
+    public WebDriver driver;
+
+    @BeforeTest
+    public void before(){
         System.setProperty("webdriver.chrome.driver", "./src/test/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
+    }
+
+
+    @Test
+    public void TestTwo() throws InterruptedException {
 
         //Open homepage Softserve
         driver.get("https://www.softserveinc.com/uk-ua/");
@@ -21,22 +31,26 @@ public class test_2 {
 
         //Wait and open search page
         WebDriverWait searchWait = new WebDriverWait(driver, 10);
-        searchWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@class = 'header-search header-nav-item']")));
+        searchWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class = 'header-search header-nav-item']")));
+       // Thread.sleep(5000);
         driver.findElement(By.xpath("//a[@class = 'header-search header-nav-item']")).click();
 
         //input data for searching
-        driver.findElement(By.id("p_lt_ctl04_pageplaceholder_p_lt_ctl01_SmartSearchBox_txtWord")).sendKeys("Test Automation");
-        driver.findElement(By.id("p_lt_ctl04_pageplaceholder_p_lt_ctl01_SmartSearchBox_btnSearch")).click();
+        driver.findElement(By.xpath("//*[starts-with(@class, 'form')]")).sendKeys("Test Automation");
+        driver.findElement(By.xpath("//*[starts-with(@value, ' Пошук')]")).click();
 
         //Data returned?
-        Boolean backData = driver.findElement(By.id("p_lt_ctl04_pageplaceholder_p_lt_ctl01_SmartSearchResults_srchResults_pnlSearchResults")).isDisplayed();
+        Boolean backData = driver.findElement(By.xpath("//*[starts-with(@class,'search-results')]")).isDisplayed();
         Assert.assertEquals(backData, Boolean.TRUE);
 
         // The test contains the requested information?
         String text = driver.findElement(By.className("search-result-title")).getAttribute("textContent");
         Boolean correctData = text.contains("Test Automation");
         Assert.assertEquals(correctData, Boolean.TRUE );
+    }
 
+    @AfterTest
+    public void after (){
         driver.quit();
     }
 }
