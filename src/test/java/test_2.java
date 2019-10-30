@@ -6,15 +6,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class test_2 {
 
     public WebDriver driver;
 
-    @BeforeTest
+    @BeforeSuite
     public void before(){
         System.setProperty("webdriver.chrome.driver", "./src/test/chromedriver.exe");
         driver = new ChromeDriver();
@@ -30,13 +28,14 @@ public class test_2 {
         driver.navigate().refresh();
 
         //Wait and open search page
-        WebDriverWait searchWait = new WebDriverWait(driver, 10);
+        WebDriverWait searchWait = new WebDriverWait(driver, 20);
         searchWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class = 'header-search header-nav-item']")));
        // Thread.sleep(5000);
         driver.findElement(By.xpath("//a[@class = 'header-search header-nav-item']")).click();
 
         //input data for searching
         driver.findElement(By.xpath("//*[starts-with(@class, 'form')]")).sendKeys("Test Automation");
+        searchWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[starts-with(@value, ' Пошук')]")));
         driver.findElement(By.xpath("//*[starts-with(@value, ' Пошук')]")).click();
 
         //Data returned?
@@ -49,7 +48,7 @@ public class test_2 {
         Assert.assertEquals(correctData, Boolean.TRUE );
     }
 
-    @AfterTest
+    @AfterSuite
     public void after (){
         driver.quit();
     }

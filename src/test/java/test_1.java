@@ -15,18 +15,15 @@ public class test_1 {
 
     public WebDriver driver;
 
-
-    @BeforeTest
-    public void before(){
-        System.setProperty("webdriver.chrome.driver", "./src/test/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
-
+   @BeforeGroups(groups = {"TestOne"})
+   public void group(){
+       System.setProperty("webdriver.chrome.driver", "./src/test/chromedriver.exe");
+       driver = new ChromeDriver();
+       driver.manage().window().maximize();
+   }
 
     @Test(groups = {"TestOne"})
     public void TestOne(){
-
         //Open homepage softserve
         driver.get("https://www.softserveinc.com/uk-ua/");
 
@@ -46,11 +43,8 @@ public class test_1 {
 
     }
 
-
-
-    @AfterTest
-    public void after(){
+   @AfterGroups(groups = {"TestOne"})
+    public void afGroup(){
         driver.quit();
     }
-
 }
