@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "ff55224b-4675-4cab-9b8f-52c0aff21a86",
+		"name": "Test updating user functionality(lecture 8 task 3)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create users with array",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f2489b78-4fb0-4e9e-81e3-a95ab5a5faf1",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": 32,\n        \"username\": \"Nik\",\n        \"firstName\": \"John\",\n        \"lastName\": \"Tester\",\n        \"email\": \"string@gmail.com\",\n        \"password\": \"pass\",\n        \"phone\": \"0987654321\",\n        \"userStatus\": 23\n    },\n    {\n        \"id\": 33,\n        \"username\": \"Mik\",\n        \"firstName\": \"Johnatan\",\n        \"lastName\": \"Testerov\",\n        \"email\": \"string@gmail.com\",\n        \"password\": \"pass123\",\n        \"phone\": \"0987654321\",\n        \"userStatus\": 24\n    }\n]"
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/createWithArray",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"createWithArray"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updated user from array (Nik)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d586bbc6-64e7-4809-bb6a-6909b7bfecf5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 32,\n        \"username\": \"Nik\",\n        \"firstName\": \"John\",\n        \"lastName\": \"TestUpdate\",\n        \"email\": \"string@gmail.com\",\n        \"password\": \"pass\",\n        \"phone\": \"0987654321\",\n        \"userStatus\": 23\n\t\n}"
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/Nik",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Nik"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get updated user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b0dcad85-91b6-46a0-a80d-10190aee1194",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.lastName).to.eql(\"TestUpdate\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/Nik",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Nik"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user from array (Nik)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "044bc26d-a6ef-4a82-901b-d08703d3c2be",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/Nik",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Nik"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user fron array (Mik)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ccdde080-6991-4303-9a29-a09ecc13b02e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/Mik",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Mik"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

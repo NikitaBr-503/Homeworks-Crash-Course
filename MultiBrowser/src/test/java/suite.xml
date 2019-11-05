@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test class">
+
+    <test verbose="1" name="testing-firefox" annotations="JDK">
+        <parameter name="driver-name" value="FIREFOX"/>
+        <classes>
+            <class name="MainTests"/>
+        </classes>
+    </test>
+
+    <test verbose="1" name="testing-chrome" annotations="JDK">
+        <parameter name="driver-name" value="CHROME"/>
+
+        <classes>
+            <class name="MainTests"/>
+        </classes>
+
+    </test>
+</suite>
