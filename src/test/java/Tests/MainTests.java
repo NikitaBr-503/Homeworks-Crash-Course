@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class MainTests {
+public class MainTests extends PageObject {
     DriverManager driverManager;
     WebDriver driver;
 
@@ -35,21 +35,21 @@ public class MainTests {
     @Test
     public void Test()  {
         //open google
-        driver.get(LocatorsOfPage.GoogleLink);
+        driver.get(GoogleLink);
         //searching
-        driver.findElement(By.name("q")).sendKeys(LocatorsOfPage.InputMessage);
-        driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+        driver.findElement(By.name(searchField)).sendKeys(InputMessage);
+        driver.findElement(By.name(searchField)).sendKeys(Keys.ENTER);
         //waiting
-        TimeWaiter.Waiting(driver, LocatorsOfPage.searchLink);
+        TimeWaiter.Waiting(driver, searchLink);
         //check name of link
-        String ActualNameOfFirstLink = driver.findElement(By.className(LocatorsOfPage.searchLink)).getText();
-        Assert.assertEquals(ActualNameOfFirstLink,  LocatorsOfPage.ExpectedNameOfFirstLink);
+        String ActualNameOfFirstLink = driver.findElement(By.className(searchLink)).getText();
+        Assert.assertEquals(ActualNameOfFirstLink,  ExpectedNameOfFirstLink);
         //open page
-        driver.findElement(By.className(LocatorsOfPage.searchLink)).click();
+        driver.findElement(By.className(searchLink)).click();
         //waiting for open page
-        TimeWaiter.Waiting(driver, LocatorsOfPage.headerOfPage);
+        TimeWaiter.Waiting(driver, headerOfPage);
         //check url
         String ActualUrl = driver.getCurrentUrl();
-        Assert.assertEquals(ActualUrl,  LocatorsOfPage.ExpectedSoftServeUrl);
+        Assert.assertEquals(ActualUrl,  ExpectedSoftServeUrl);
     }
 }
